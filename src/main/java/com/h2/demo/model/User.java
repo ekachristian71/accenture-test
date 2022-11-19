@@ -21,29 +21,29 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String name;
 
-    @Column
+    @Column(nullable = false)
     private String socialSecurityNumber;
 
-    @Column
+    @Column(nullable = false)
     private String dateOfBirth;
 
-    @Column
-    private long createdDate;
+    @Column(nullable = false)
+    private long createdDate = new Date().getTime();
 
-    @Column
-    private long updatedDate;
+    @Column(nullable = false)
+    private long updatedDate = new Date().getTime();
 
-    @Column
+    @Column(nullable = false)
     private String updatedBy = "SPRING_BOOT_TEST";
 
-    @Column
+    @Column(nullable = false)
     private String createdBy = "SPRING_BOOT_TEST";
 
-    @Column
-    private boolean isDeleted;
+    @Column(nullable = false)
+    private boolean isDeleted = false;
 
     @Override
     public boolean equals(Object o) {
