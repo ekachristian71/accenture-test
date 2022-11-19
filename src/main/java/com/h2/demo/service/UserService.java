@@ -76,7 +76,7 @@ public class UserService {
             user.setDeleted(true);
             userRepository.saveAndFlush(user);
         }
-        return null;
+        return user;
     }
 
     public User updateUserById(User targetUser, long targetUserId) {

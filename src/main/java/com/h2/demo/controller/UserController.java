@@ -27,10 +27,10 @@ public class UserController {
     @PostMapping("/users")
     public ResponseEntity<Response> addNewUser(@Validated(User.class) @RequestBody User user) {
         Response response = new Response();
-        response.setStatus(HttpStatus.OK);
-        response.setCode(String.valueOf(HttpStatus.OK.value()));
+        response.setStatus(HttpStatus.CREATED);
+        response.setCode(String.valueOf(HttpStatus.CREATED.value()));
         response.setData(userService.addNewUser(user));
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @PutMapping("/users/{id}")
@@ -47,7 +47,8 @@ public class UserController {
         Response response = new Response();
         response.setStatus(HttpStatus.NO_CONTENT);
         response.setCode(String.valueOf(HttpStatus.NO_CONTENT.value()));
-        response.setData(userService.deleteUserById(id));
+        response.setData(null);
+        userService.deleteUserById(id);
         return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
     }
 
