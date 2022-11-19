@@ -1,13 +1,14 @@
-package com.accenture.backend;
+package com.h2.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class BackendApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BackendApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 }
